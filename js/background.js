@@ -69,73 +69,6 @@ function round(value) {
   return Number(Math.round(value + "e" + 4) + "e-" + 4);
 }
 
-// function computeProbabilityOfEvidence(url) {
-//   const elemForGender = getElemForGender(url);
-//   const elemForMarital = getElemForMarital(url);
-//   const elemForIncome = getElemForIncome(url);
-
-//   const totalGenderUrlRecords = getTotalGenderRecordsForUrl(elemForGender);
-//   const totalGenderRecords = getTotalGenderRecords();
-
-
-//   const totalMaritalUrlRecords = getTotalMaritalRecordsForUrl(elemForMarital);
-//   const totalMaritalRecords = getTotalMaritalRecords();
-
-//   const totalIncomeUrlRecords = getTotalIncomeRecordsForUrl(elemForIncome);
-//   const totalIncomeRecords = getTotalIncomeRecords();
-
-//   console.log('totalMaritalRecords', totalMaritalRecords);
-//   console.log('totalGenderRecords', totalGenderRecords);
-
-//   console.log('totalIncomeRecords', totalIncomeRecords);
- 
-
-//   evidenceMarital == null
-//     ? (evidenceMarital = totalMaritalUrlRecords / totalMaritalRecords)
-//     : (evidenceMarital *= totalMaritalUrlRecords / totalMaritalRecords);
-//   evidenceGender == null
-//     ? (evidenceGender = totalGenderUrlRecords / totalGenderRecords)
-//     : (evidenceGender *= totalGenderUrlRecords / totalGenderRecords);
-
-//   evidenceIncome == null
-//     ? (evidenceIncome= totalIncomeUrlRecords / totalIncomeRecords)
-//     : (evidenceIncome *= totalIncomeUrlRecords / totalIncomeRecords);
-
-// }
-
-// function computeProbabilityOfEvidenceGender(url) {
-
-
-//   const elemForGender = getElemForGender(url);
-//   const totalGenderUrlRecords = getFemaleRecordsForUrl(elemForGender); //
-//   const totalGenderUrlRecords = getTotalGenderRecordsForUrlMale(elemForGender); //
-//   const totalGenderRecords = getTotalGenderRecords();
-
-//   console.log('totalGenderRecords', totalGenderRecords);
-//   console.log('yessssss', totalGenderUrlRecords)
-
-//   evidenceGender == null
-//     ? (evidenceGender = totalGenderUrlRecords / totalGenderRecords)
-//     : (evidenceGender *= totalGenderUrlRecords / totalGenderRecords);
-
-//     console.log('evode', totalGenderUrlRecords / totalGenderRecords)
-
-// }
-
-
-// function computeProbabilityOfEvidenceMarital(url) {
-//   const elemForMarital = getElemForMarital(url);
-//   const totalMaritalUrlRecords = getTotalMaritalRecordsForUrl(elemForMarital);
-//   const totalMaritalRecords = getTotalMaritalRecords();
-//   console.log('totalMaritalRecords', totalMaritalRecords);
-
- 
-
-//   evidenceMarital == null
-//     ? (evidenceMarital = totalMaritalUrlRecords / totalMaritalRecords)
-//     : (evidenceMarital *= totalMaritalUrlRecords / totalMaritalRecords);
-
-// }
 
 
 
@@ -178,39 +111,6 @@ function putInArrayLikelihoodIncomeGroup(
 }
 
 
-
-// function computeProbabilityOfEvidenceIncome(url) {
-//   const elemForIncome = getElemForIncome(url);
-//   const totalIncomeUrlRecords = getTotalIncomeRecordsForUrl(elemForIncome);
-//   const totalIncomeRecords = getTotalIncomeRecords();
-
-//   console.log('totalIncomeRecords', totalIncomeRecords);
-
-//   evidenceIncome == null
-//     ? (evidenceIncome= totalIncomeUrlRecords / totalIncomeRecords)
-//     : (evidenceIncome *= totalIncomeUrlRecords / totalIncomeRecords);
-
-// }
-
-
-
-// function computeProbabilityOfEvidenceGender(url) {
-//   const elemForGender = getElemForGender(url);
-//   const totalGenderUrlRecords = getFemaleRecordsForUrl(elemForGender); //
-//   // const totalGenderUrlRecords = getTotalGenderRecordsForUrlMale(elemForGender); //
-//   const totalGenderRecords = getTotalGenderRecords();
-
-//   console.log('totalGenderRecords', totalGenderRecords);
-//   console.log('yessssss', totalGenderUrlRecords)
-
-//   evidenceGender == null
-//     ? (evidenceGender = totalGenderUrlRecords / totalGenderRecords)
-//     : (evidenceGender *= totalGenderUrlRecords / totalGenderRecords);
-
-//     console.log('evode', totalGenderUrlRecords / totalGenderRecords)
-
-// }
-
 function computeProbabilityOfLikelihoodGender(url) {
   var elemForGender = getElemForGender(url);
   var female_records_for_url = getFemaleRecordsForUrl(elemForGender);
@@ -237,14 +137,13 @@ console.log('probablity_l_f', probability_likelihood_female)
       male_records_for_url ;
 
     console.log('female_records_for_url', female_records_for_url, url)
-    console.log('PROBABILITY LIKELIHOOD FEMALE', probability_likelihood_male, url)
+    console.log('probability_likelihood_male', probability_likelihood_male, url)
 
 }
 
 function computeProbabilityOfLikelihoodMarital(url) {
   var elemForMarital = getElemForMarital(url);
-  console.log('ELEMFORMARITAL', elemForMarital);
-
+  console.log('elemForMarital', elemForMarital);
 
   var single_records_for_url = getSingleRecordsForUrl(elemForMarital);
   var relationship_records_for_url = getRelationshipRecordsForUrl(
@@ -306,7 +205,7 @@ function computeProbabilityOfLikelihoodIncome(url) {
   
 
   
-  console.log('probablity_l_lowwww', probability_likelihood_low)
+  console.log('probability_likelihood_low', probability_likelihood_low)
   console.log('low_records_for_url', low_records_for_url)
 
   probability_likelihood_low == null
@@ -423,7 +322,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       final_result_marital_below = final_probability_single + final_probability_relationship  +
       final_probability_married + final_probability_divorcedWidowed;
 
-      console.log('SHOW', final_probability_single, final_probability_relationship,final_probability_divorcedWidowed, final_probability_married)
+
       final_result_single = final_probability_single / final_result_marital_below
       final_result_married = final_probability_married / final_result_marital_below
       final_result_relationship = final_probability_relationship / final_result_marital_below
@@ -485,13 +384,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       });
    
 
-      console.log('SUM GENDER RECORDS', sumGenderRecords)
+
       console.log('arrayWithFinalValuesGender',arrayWithFinalValuesGender);
       console.log('arrayWithFinalValuesMarital',arrayWithFinalValuesMaritalStatus);
       console.log('arrayWithFinalValuesIncome',arrayWithFinalValuesIncome);
-
       console.log('arrayWithFinalLikelihoodGender',arrayWithFinalLikelihoodGender);
-
       console.log('arrayWithFinalLikelihoodMarital',arrayWithFinalLikelihoodMaritalStatus);
       console.log('arrayWithFinalLikelihoodMarital',arrayWithFinalLikelihoodIncomeGroup);
     }
