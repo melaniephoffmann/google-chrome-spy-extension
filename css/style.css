@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 300px;
+  min-height: 100px;
+}
+
+.app {
+  padding-top: 10px;
+}
+
+.prediction {
+  margin-top: 15px;
+}
+
+.badge {
+  margin-bottom: 5px;
+  padding: .60em 1em;
+}
