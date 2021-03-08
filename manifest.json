@@ -1,10 +1,26 @@
 {
-  "name": "bachelor thesis extension",
-  "version": "1.0",
+  "name": "Transparency Extension",
+  "version": "1.6",
   "manifest_version": 2,
   "content_scripts": [
     {
-      "js": "content.js"
+      "matches": ["<all_urls>"],
+      "js": ["./js/content.js"]
     }
-  ]
+  ],
+  "background": {
+    "scripts": [
+      "./js/background.js",
+      "./js/model/marital-status.js",
+      "./js/model/gender.js",
+      "./js/model/income.js",
+      "./js/papaparse.min.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "spy.png",
+    "default_title": "Default Title",
+        "default_popup": "popup.html"
+  },
+  "permissions": ["tabs", "notifications", "background", "storage" ]
 }

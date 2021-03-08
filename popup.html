@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title></title>
+    </head>
+
+    <body>
+        <div class="app">
+            <div class="container text-center">
+                
+                <h6>SHOW PREDICTION FOR:</h6>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-1 text-center" style="padding-right: 0;"><i class="fas fa-user"></i></div>
+                    <div class="col-8">Your Gender</div>
+                    <div class="col-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input float-end" type="checkbox" id="gender">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1 text-center" style="padding-right: 0;"><i class="fas fa-heart"></i></div>
+                    <div class="col-8">Your Marital Status</div>
+                    <div class="col-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input float-end" type="checkbox" id="marital">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1 text-center" style="padding-right: 0;"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="col-8">Your Income Group</div>
+                    <div class="col-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input float-end" type="checkbox" id="income">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="container text-center">
+                
+                    <h6>VISITED WEBSITES WHICH HAVE MADE THE BIGGEST IMPACT FOR:</h6>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-1 text-center" style="padding-right: 0;"><i class="fas fa-user"></i></div>
+                    <div class="col-8">Your Gender</div>
+                    <div class="col-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input float-end" type="checkbox" id="likelihood_gender">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-1 text-center" style="padding-right: 0;"><i class="fas fa-heart"></i></div>
+                    <div class="col-8">Your Marital Status</div>
+                    <div class="col-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input float-end" type="checkbox" id="likelihood_marital_status">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-1 text-center" style="padding-right: 0;"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="col-8">Your Income Group</div>
+                    <div class="col-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input float-end" type="checkbox" id="likelihood_income_group">
+                        </div>
+                    </div>
+                </div>
+             
+
+                <br>
+
+                <h6 class="text-center">PREDICTED FEATURES</h6>
+                <div class="prediction text-center"></div>
+
+                <br>
+            </div>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>
